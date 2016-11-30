@@ -59,7 +59,7 @@
 							</c:when>
 						</c:choose>
 					<tr>
-
+                        <h3><font color=green><center>Supplier page</center></font></h3>
 						<c:choose>
 							<c:when test="${supplier.sid gt 0}">
 								<td><form:label class="btn btn-default btn-block" path="sid">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
@@ -24,9 +24,9 @@
 
   <h2>
   <font color=green><center>This is login page</center></font>
- <!--  <font color=green ><center><img src="F:\Shoppingsite\imges\aq.jpg" class="img-rounded" alt="paris" width="304" height="236"></center>
+  <font color=green ><center><img src="F:\Shoppingsite\imges\aq.jpg" class="img-rounded" alt="paris" width="304" height="236"></center>
  </font>
- -->
+
   </h2>
   <form class="form-horizontal">
   

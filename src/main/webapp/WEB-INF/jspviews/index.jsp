@@ -1,4 +1,4 @@
-<%@ page language ="java" contentType="text/html;  charset=ISO-8859-1"
+<%-- <%@ page language ="java" contentType="text/html;  charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	
@@ -17,18 +17,16 @@
 ${errorMessage}
 ${registerMessage}
 
-<%-- <!-- if the error message is there,I have to open login.jsp -->
-<c:if test="${errorMessage}">
-<jsp:include page="login.jsp"></jsp:include>
-</c:if> --%>
+
 <!-- if the user clicked login link,I have to open login.jsp -->
   <c:if test="${UserClickedLogin}">
 <jsp:include page="login.jsp"></jsp:include>
 </c:if>
-<c:if test="${UserClickedRegister}">
+ <c:if test="${UserClickedRegister}">
 <jsp:include page="register.jsp"></jsp:include>
 </c:if>  
 
  
 </body>
 </html>
+ --%>

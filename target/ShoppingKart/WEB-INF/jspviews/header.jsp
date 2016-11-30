@@ -48,24 +48,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">ShoppingKart</a>
+      <!-- <a class="navbar-brand" href="#">ShoppingKart</a> -->
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <!--  <li class="active"><a href="#">Home</a></li> 
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="Category">category</a></li>
             <li><a href="Supplier">supplier</a></li>
-            <li><a href="Product">product</a></li>
+            <li><a href="Product">product</a></li> -->
+            <li><a href="User">Signup</a></li>
           </ul>
         </li>
         </ul>
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="registerHere"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       <!--  <li><a href="registerHere"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
         
       </ul>
     </div>
@@ -136,7 +137,7 @@
   </c:choose>
   <c:choose>
   <c:when test="${UserClickedRegister}">
-  <c:import url="/WEB-INF/jspviews/register.jsp"></c:import>
+  <c:import url="/WEB-INF/jspviews/User.jsp"></c:import>
   </c:when>
   </c:choose>   
 </body>

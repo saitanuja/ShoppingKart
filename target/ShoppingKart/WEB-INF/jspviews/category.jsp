@@ -61,7 +61,7 @@
 						</c:choose>
 					<tr>
 					<tr>
-                      <!--  <h3>Category page</h3> -->
+                        <h3> <font color=green><center>Category page</center></font></h3> 
 						<c:choose>
 
 							<c:when test="${category.cid gt 0}">
@@ -71,11 +71,7 @@
 								<td><form:input class="form-control" path="cid"
 										readonly="true" /></td>
 							</c:when>
-							<%-- <c:otherwise>
-								<td><form:input class="form-control" path="id"
-										pattern=".{3,10}" required="true"
-										title="id should contains 3 to 10 characters" /></td>
-							</c:otherwise> --%>
+							
 						</c:choose>
 					<tr>
 						<td><form:label class="btn btn-default btn-block" path="cname">
@@ -112,13 +108,13 @@
 			<div class="container" data-ng-app="myApp"
 				data-ng-controller="MyController" data-ng-init="getDataFromServer()"
 				style="overflow: auto; height: 400px; width: 70%">
-				<form>
+				<%-- <form>
 					<input
 						class="w3-input w3-animate-input w3-border w3-round w3-small"
 						data-ng-model="search" type="text" placeholder=" Search Category"
 						style="width: 20%">
 
-				</form>
+				</form> --%>
 				<br>
 				<table class="table table-bordered table-hover ">
 					<thead>

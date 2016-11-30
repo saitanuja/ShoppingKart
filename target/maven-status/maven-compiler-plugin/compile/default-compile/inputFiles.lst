@@ -1,3 +1,5 @@
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\User.java
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAO\UserDAO.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\config\ApplicationContextConfig.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\SupplierController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Supplier.java
@@ -13,3 +15,5 @@ F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\CategoryControlle
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAO\ProductDAO.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\ProductDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Product.java
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\UserController.java
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\UserDAOImpl.java

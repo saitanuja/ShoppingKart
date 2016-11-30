@@ -55,7 +55,7 @@ public class ProductConroller {
 	@RequestMapping(value="/Product")
 	public ModelAndView getAllData(@ModelAttribute("product")Product product,BindingResult result,Model model)
 	{
-		ModelAndView mv = new ModelAndView("/index");
+		ModelAndView mv = new ModelAndView("/header");
 		mv.addObject("categoryList",categoryDAO.list());
 		mv.addObject("supplierList",supplierDAO.list());
 	mv.addObject("productList",productDAO.list());

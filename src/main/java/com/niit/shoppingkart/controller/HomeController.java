@@ -12,14 +12,14 @@ public class HomeController {
 	@RequestMapping("/")
 	public String gotoHome()
 	{
-		return "index";
+		return "header";
 	}
 
 	@RequestMapping("/register")
 	public String register(Model m)
 	{
 		m.addAttribute("registerMessage","your successfully logged in");
-		return "index";
+		return "header";
 		
 	}
 @RequestMapping("/validate")
@@ -34,7 +34,7 @@ if (id.equals("niit") && pwd.equals("niit"))
 else 
 {
 		model.addAttribute("errorMessage","Invalid Credentials... please try again");
-		return "index";
+		return "success";
 }
 
 //SPA
@@ -43,7 +43,7 @@ else
 @RequestMapping("/login")
 public  ModelAndView login(Model model)
 {
-	ModelAndView mv=new ModelAndView("index");
+	ModelAndView mv=new ModelAndView("header");
 	model.addAttribute("UserClickedLogin","true");
 	return mv;
 }
@@ -52,7 +52,7 @@ public  ModelAndView login(Model model)
 @RequestMapping("/registerHere")
 public ModelAndView registerHere()
 {
-	ModelAndView mv=new ModelAndView("index");
+	ModelAndView mv=new ModelAndView("header");
 	mv.addObject("UserClickedRegister","true");
 	return mv;
 }

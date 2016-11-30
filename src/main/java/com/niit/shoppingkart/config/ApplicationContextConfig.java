@@ -17,12 +17,15 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.shoppingkart.DAO.CategoryDAO;
 import com.niit.shoppingkart.DAO.ProductDAO;
 import com.niit.shoppingkart.DAO.SupplierDAO;
+import com.niit.shoppingkart.DAO.UserDAO;
 import com.niit.shoppingkart.DAOImpl.CategoryDAOImpl;
 import com.niit.shoppingkart.DAOImpl.ProductDAOImpl;
 import com.niit.shoppingkart.DAOImpl.SupplierDAOImpl;
+import com.niit.shoppingkart.DAOImpl.UserDAOImpl;
 import com.niit.shoppingkart.model.Category;
 import com.niit.shoppingkart.model.Product;
 import com.niit.shoppingkart.model.Supplier;
+import com.niit.shoppingkart.model.User;
 
 
 @Configuration
@@ -59,6 +62,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
+		sessionBuilder.addAnnotatedClasses(User.class);
 		System.out.println("Session");
 		return sessionBuilder.buildSessionFactory();
 		
@@ -92,6 +96,11 @@ public class ApplicationContextConfig {
 			return new SupplierDAOImpl(sessionFactory);
 	}
 	
+	@Autowired
+	@Bean(name = "userDAO")
+	public UserDAO getUserDao(SessionFactory sessionFactory) {
+			return new UserDAOImpl(sessionFactory);
+	}
 	
 	
 

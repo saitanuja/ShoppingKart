@@ -61,15 +61,14 @@
 							</c:when>
 						</c:choose>
 					<tr>
-
+                       <h3><font color=green><center>Product page</center></font></h3>
 						<c:choose>
-							<c:when test="${product.id gt 0}">
+						 <c:when test="${product.id gt 0}"> 
 								<td><form:label class="btn btn-default btn-block" path="id">
 										<spring:message text="Id" />
 									</form:label></td>
-								<td><form:input class="form-control" path="id"
-										readonly="true" /></td>
-							</c:when>
+								<td><form:input class="form-control" path="id" readonly="true" /></td>
+							 </c:when> 
 							<%-- <c:otherwise>
 								<td><form:input class="form-control" path="id"
 										pattern=".{2,10}" required="true"
@@ -137,12 +136,10 @@
 				</table>
 				<br>
 				<c:if test="${!empty product.name}">
-					<input class="btn btn-block btn-primary" type="submit"
-						value="Edit Product" />
+					<input class="btn btn-block btn-primary" type="submit" value="Edit Product" />
 				</c:if>
 				<c:if test="${empty product.name}">
-					<input class="btn btn-block btn-primary" type="submit"
-						value="Add Product" />
+					<input class="btn btn-block btn-primary" type="submit" value="Add Product" />
 				</c:if>
 			</form:form>
 		</div>
@@ -156,13 +153,13 @@
 			<div class="container" data-ng-app="myApp"
 				data-ng-controller="MyController" data-ng-init="getDataFromServer()"
 				style="overflow: auto; height: 400px; width: 80%">
-				<form>
+				<%-- <form>
 					<input
 						class="w3-input w3-animate-input w3-border w3-round w3-small"
 						data-ng-model="search" type="text" placeholder=" Search Product"
 						style="width: 20%">
 
-				</form>
+				</form> --%>
 				<br>
 				<table class="table table-bordered table-hover ">
 					<thead>
