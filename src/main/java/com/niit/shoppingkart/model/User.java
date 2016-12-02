@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Table
 @Entity
 public class User {
@@ -65,9 +66,4 @@ public class User {
 	public void setEnabled(String enabled) {
 		this.enabled = enabled;
 	}
-	
-	
-	
-	
-
 }

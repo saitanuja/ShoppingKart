@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-
+<h1><center>Online Bazaar</center></h1>
 <nav class="navbar navbar-inverse"data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -52,27 +52,28 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!--  <li class="active"><a href="#">Home</a></li> 
+         <!--   <li class="active"><a href="#">Home</a></li>  
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="Category">category</a></li>
             <li><a href="Supplier">supplier</a></li>
-            <li><a href="Product">product</a></li> -->
-            <!-- <li><a href="User">Signup</a></li> -->
-          </ul>
-        </li>
-        </ul>
+            <li><a href="Product">product</a></li>  
+          
+           </ul>
+           </li> -->
+            <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+           </ul>
      
       <ul class="nav navbar-nav navbar-right">
-       <!--  <li><a href="registerHere"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        
+       <!--  <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li> -->
         
       </ul>
     </div>
   </div>
 </nav>
- <div class="container">
+ <!-- <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
@@ -115,7 +116,7 @@
 </div> 
 
 </body>
-
+ -->
 
 
    <c:choose>
@@ -133,15 +134,20 @@
   <c:import url="/WEB-INF/jspviews/category.jsp"></c:import>
   </c:when>
   </c:choose>
- <c:choose>
+  <%-- <c:choose>
   <c:when test="${UserClickedLogin}">
   <c:import url="/WEB-INF/jspviews/login.jsp"></c:import>
   </c:when>
-  </c:choose>
+  </c:choose> --%>
   <c:choose>
-  <c:when test="${UserClickedRegister}">
-  <c:import url="/WEB-INF/jspviews/User.jsp"></c:import>
+  <c:when test="${userClickedRegistration}">
+  <c:import url="/WEB-INF/jspviews/Register.jsp"></c:import>
   </c:when>
-  </c:choose>   
+  </c:choose>  
+ <%--  <c:choose>
+		<c:when test="${UserClickedadmin}">
+			<c:import url="/WEB-INF/jspviews/Admin.jsp"></c:import>
+		</c:when>
+	</c:choose>   --%>
 </body>
 </html>

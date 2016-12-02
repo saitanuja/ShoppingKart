@@ -63,7 +63,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(User.class);
-		System.out.println("Session");
+        	System.out.println("Session");
 		return sessionBuilder.buildSessionFactory();
 		
 	}

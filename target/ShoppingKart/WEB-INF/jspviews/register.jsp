@@ -1,67 +1,72 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-
-<!DOCTYPE html>
-<html lang="en">
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <style>
+ 
+ h1{
+    text-align: center;
+    }
+ h3{
+    text-align: center;
+    }
+    </style>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title> New User Registration</title>
 </head>
-<style>
-  body{
-       background-color: #E8E3E3;
-  }
-  </style>
-<body>
 
+	
+	<body style="padding-top:">
+	<div class="container">
+	
+	${message}
+	<section id="content">
+			<c:url var="addAction" value="adduser"></c:url>
+			<form:form action="${addAction}" commandName="userDetails"
+				method="post">
+				<h4>Registration</h4>
+				<div>
+					<form:input path="name" type="text" placeholder="Name"
+						pattern=".{5,10}" required="true" id="username" name="username" 
+						title="minimum length for name is 5"/>
+				</div>
+				<br>
+				<div>
+					<form:input path="userName" type="text" placeholder="Username"
+					pattern=".{5,10}" required="true" id="username" name="username"
+					title="minimum length for username is 5" />
+				</div>
+				<br>
+				<div>
+					<form:input path="password" type="password" placeholder="Password" pattern=".{3,8}"
+						required="true" id="password" name="password" title="minimum length for passsword is 3" />
+				</div>
+				<br>
+				<div>
+					<form:input path="email" type="email" placeholder="Email"
+						required="true" id="username" name="username" />
+				</div>
+				<br>
 
+				<div>
+					<form:input path="mobile" type="text" placeholder="Mobile"
+						pattern="^[789]\d{9}$" required="true" id="username"
+						name="username" title="Enter valid mobile number" />
+				</div>
+				<br>
+				<div>
+					<input type="submit" value="Register" /><a href="Login">Sign In</a>
+				</div>
 
-<div class="container">
-
-  <h2>
-  <font color=green >
-<center>This is register page</center></font>
-<!-- <center><img src="F:\Shoppingsite\imges\paris.jpg" class="img-rounded" alt="paris" width="304" height="236"></center> -->
-  </h2>
-  <form class="form-horizontal">
-   <div class="form-group">
-      <label class="control-label col-sm-2" for="userId">UserID:</label>
-      <div class="col-sm-6">
-        <input type="userId" class="form-control" id="UserId" placeholder="Enter UserID">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-6">
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-6">
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-danger">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-
+			</form:form>
+			
+		</section>
+		
+	</div>
+	
 </body>
-</html> --%>
+</html>

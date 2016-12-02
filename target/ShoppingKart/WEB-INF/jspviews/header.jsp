@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-
+<h1><center>Online Bazaar</center></h1>
 <nav class="navbar navbar-inverse"data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,24 +48,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- <a class="navbar-brand" href="#">ShoppingKart</a> -->
+       <a class="navbar-brand" href="#">ShoppingKart</a> 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!--  <li class="active"><a href="#">Home</a></li> 
+           <!-- <li class="active"><a href="#">Home</a></li>  
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="Category">category</a></li>
             <li><a href="Supplier">supplier</a></li>
-            <li><a href="Product">product</a></li> -->
-            <li><a href="User">Signup</a></li>
-          </ul>
-        </li>
+            <li><a href="Product">product</a></li>  -->
+           <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          
+        
         </ul>
      
       <ul class="nav navbar-nav navbar-right">
-       <!--  <li><a href="registerHere"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
         
       </ul>
@@ -115,6 +115,9 @@
 </div> 
 
 </body>
+
+
+
    <c:choose>
   <c:when test="${UserClickedProducts}">
   <c:import url="/WEB-INF/jspviews/product.jsp"></c:import>
@@ -137,8 +140,13 @@
   </c:choose>
   <c:choose>
   <c:when test="${UserClickedRegister}">
-  <c:import url="/WEB-INF/jspviews/User.jsp"></c:import>
+  <c:import url="/WEB-INF/jspviews/register.jsp"></c:import>
   </c:when>
-  </c:choose>   
+  </c:choose>  
+  <c:choose>
+		<c:when test="${UserClickedadmin}">
+			<c:import url="/WEB-INF/jspview/Admin.jsp"></c:import>
+		</c:when>
+	</c:choose> 
 </body>
 </html>

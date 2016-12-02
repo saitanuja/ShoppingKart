@@ -9,11 +9,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.niit.shoppingkart.DAO.UserDAO;
 import com.niit.shoppingkart.model.User;
 
 public class UserDAOImpl implements UserDAO {
-	
+
+
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -94,6 +96,7 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
+
 
 
 }

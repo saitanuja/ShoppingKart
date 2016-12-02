@@ -4,6 +4,7 @@ F:\ShoppingKart\src\main\java\com\niit\shoppingkart\config\ApplicationContextCon
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\SupplierController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Supplier.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\MultiPartController.java
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\AdminController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\CategoryDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\SupplierDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Category.java

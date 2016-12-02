@@ -11,6 +11,7 @@ com\niit\shoppingkart\model\Supplier.class
 com\niit\shoppingkart\config\ApplicationContextConfig.class
 com\niit\shoppingkart\controller\CategoryController.class
 com\niit\shoppingkart\controller\SupplierController.class
+com\niit\shoppingkart\controller\AdminController.class
 com\niit\shoppingkart\controller\UserController.class
 com\niit\shoppingkart\model\User.class
 com\niit\shoppingkart\DAO\SupplierDAO.class

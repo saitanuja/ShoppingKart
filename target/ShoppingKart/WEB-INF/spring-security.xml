@@ -16,35 +16,37 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security.xsd">
 	<security:http auto-config="true" use-expressions="true">
 
-		<security:intercept-url pattern="/product/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/addproduct/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/editproduct/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/removeproduct/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/category/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/addcategory/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/editcategory/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/removecategory/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/supplier/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/addsupplier/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/editsupplier/**" access="hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/removesupplier/**" access="hasRole('ROLE_ADMIN')" />
-
-		<security:intercept-url pattern="/addtoCart/**" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/viewcart/**" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/editorder/**" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/Product/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/addproduct/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/editById/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/deleteById/**"   access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/Category/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/addcategory/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/editBycid/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/deleteBycid/**"   access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/Supplier/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/addsupplier/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/editBySupplier/**"  access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/deleteBySupplier/**"   access="hasRole('ROLE_ADMIN')" />
+  <!--       
+    <security:intercept-url pattern="/addtoCart/**"   access="hasRole('ROLE_USER')" />
+    <security:intercept-url pattern="/viewcart/**"   access="hasRole('ROLE_USER')" />
+    
+    
+    <security:intercept-url pattern="/editorder/**"  access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/deleteitem/**" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/Payment/**" access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/placeorder/**" access="hasRole('ROLE_USER')" />
-		
-
-		<security:form-login login-page="/login"
-			default-target-url="/" login-processing-url="/perform_login"
-			authentication-failure-url="/login"
-			authentication-success-forward-url="/login_session_attributes" />
-
-		<security:logout logout-url="/perform_logout"
-			invalidate-session="true" logout-success-url="/Welcome" />
-
+		<security:intercept-url pattern="/Pay/**"  access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/placeorder/**" access="hasRole('ROLE_USER')" /> -->
+    
+    
+     <security:form-login login-page="/login"
+        default-target-url="/" login-processing-url="/perform_login"
+        authentication-failure-url="/"
+        authentication-success-forward-url="/login_session_attributes" />
+        
+    <security:logout logout-url="/perform_logout"
+    	invalidate-session="true" logout-success-url="/"/> 
+    	
 		<security:csrf disabled="true" />
 
 	</security:http>
@@ -53,8 +55,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username,password,enabled from userdetails where username=?"
-				authorities-by-username-query="select username, role from userdetails where username =?" />
+				users-by-username-query="select username,password,enabled from user where username=?"
+				authorities-by-username-query="select username, role from user where username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 	</beans:beans>
