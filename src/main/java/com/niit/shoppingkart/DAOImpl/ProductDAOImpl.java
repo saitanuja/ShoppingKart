@@ -74,7 +74,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 		return listProduct;
 	}
-	/*@Transactional
+	@Transactional
 	@SuppressWarnings("unchecked")
 	public List<Product> getproduct(int id) {
 		String hql="from Product where id= "+id;
@@ -83,5 +83,7 @@ public class ProductDAOImpl implements ProductDAO {
 		@SuppressWarnings("deprecation")
 		List<Product> listProduct = (List<Product>) query.list();
 		return listProduct;
-	}*/
+	}
+
+	
 	}

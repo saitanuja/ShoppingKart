@@ -69,11 +69,7 @@
 									</form:label></td>
 								<td><form:input class="form-control" path="id" readonly="true" /></td>
 							 </c:when> 
-							<%-- <c:otherwise>
-								<td><form:input class="form-control" path="id"
-										pattern=".{2,10}" required="true"
-										title="id should contains 2 to 10 characters" /></td>
-							</c:otherwise> --%>
+							
 						</c:choose>
 					<tr>
 						<td><form:label class="btn btn-default btn-block" path="name">
@@ -175,24 +171,24 @@
 							<th>Delete</th>
 						</tr>
 					</thead>
-					<c:forEach var="obj" items="${productList}">
+					<c:forEach var="product" items="${productList}">
 					<tbody>
 						<tr
 							data-ng-repeat="product in products | orderBy:sortType:sortReverse | filter:search">
-							<td><c:out value="${obj.id}"/></td>
-							<td><c:out value="${obj.name}"/></td>
-							<td><c:out value="${obj.description}"/></td>
-							<td><c:out value="${obj.price}"/></td>
-							 <td><c:out value="${obj.supplierid}"/></td> 
-							<td><c:out value="${obj.categoryid}"/></td> 
+							<td><c:out value="${product.id}"/></td>
+							<td><c:out value="${product.name}"/></td>
+							<td><c:out value="${product.description}"/></td>
+							<td><c:out value="${product.price}"/></td>
+							 <td><c:out value="${product.supplierid}"/></td> 
+							<td><c:out value="${product.categoryid}"/></td> 
 							<td><div class="thumbnail">
-								<img height="300px" width="100px" alt="${obj.id }"
-									src="<c:url value="F:\ShoppingKart\src\main\webapp\images/${obj.id }.jpg"></c:url>">
+								<img height="300px" width="100px" alt="${product.id }"
+									src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
 							</div>
 						    <td><a class="btn btn-info btn-xs"
-								href="editById/${obj.id}">Edit</a></td>
+								href="editById/${product.id}">Edit</a></td>
 							<td><a class="btn btn-danger btn-xs"
-								href="deleteById/${obj.id}">Delete</a></td>
+								href="deleteById/${product.id}">Delete</a></td>
 						</tr>
 					</tbody>
 					</c:forEach>

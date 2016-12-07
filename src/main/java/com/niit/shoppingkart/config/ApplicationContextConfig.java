@@ -14,15 +14,21 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shoppingkart.DAO.CartDAO;
 import com.niit.shoppingkart.DAO.CategoryDAO;
+import com.niit.shoppingkart.DAO.CheckoutDAO;
 import com.niit.shoppingkart.DAO.ProductDAO;
 import com.niit.shoppingkart.DAO.SupplierDAO;
 import com.niit.shoppingkart.DAO.UserDAO;
+import com.niit.shoppingkart.DAOImpl.CartDAOImpl;
 import com.niit.shoppingkart.DAOImpl.CategoryDAOImpl;
+import com.niit.shoppingkart.DAOImpl.CheckoutDAOImpl;
 import com.niit.shoppingkart.DAOImpl.ProductDAOImpl;
 import com.niit.shoppingkart.DAOImpl.SupplierDAOImpl;
 import com.niit.shoppingkart.DAOImpl.UserDAOImpl;
+import com.niit.shoppingkart.model.Cart;
 import com.niit.shoppingkart.model.Category;
+import com.niit.shoppingkart.model.Checkout;
 import com.niit.shoppingkart.model.Product;
 import com.niit.shoppingkart.model.Supplier;
 import com.niit.shoppingkart.model.User;
@@ -63,6 +69,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(User.class);
+		sessionBuilder.addAnnotatedClasses(Cart.class);
+		sessionBuilder.addAnnotatedClasses(Checkout.class);
         	System.out.println("Session");
 		return sessionBuilder.buildSessionFactory();
 		
@@ -101,6 +109,20 @@ public class ApplicationContextConfig {
 	public UserDAO getUserDao(SessionFactory sessionFactory) {
 			return new UserDAOImpl(sessionFactory);
 	}
+	@Autowired
+	@Bean(name = "cartDAO")
+	public CartDAO getCartDAO(SessionFactory sessionFactory) {
+			return new CartDAOImpl(sessionFactory);
+	}
+	
+	
+	@Autowired
+	@Bean(name = "checkoutDAO")
+	public CheckoutDAO getCheckoutDAO(SessionFactory sessionFactory) {
+			return new CheckoutDAOImpl(sessionFactory);
+	
+	}
+	
 	
 	
 

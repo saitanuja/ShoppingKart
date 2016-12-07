@@ -38,7 +38,7 @@ public class UserDAOImpl implements UserDAO {
 @SuppressWarnings("deprecation")
 @Transactional
 	public User get(int id) {
-		String hql = "from"+" UserDetails"+" where userId="+id;
+		String hql = "from"+" User"+" where userId="+id;
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
@@ -63,10 +63,10 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 @Transactional
-	public boolean isValidUser(String userName, String password) {
+	public boolean isValidUser(String username, String password) {
 		@SuppressWarnings("deprecation")
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
-		c.add(Restrictions.eq("userName",userName));
+		c.add(Restrictions.eq("username",username));
 		c.add(Restrictions.eq("password",password));
 		
 		@SuppressWarnings("rawtypes")
@@ -82,9 +82,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@SuppressWarnings("deprecation")
 	@Transactional
-	public User get(String userName) {
+	public User get(String username) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(User.class);
-		c.add(Restrictions.eq("userName",userName));
+		c.add(Restrictions.eq("username",username));
 		
 		@SuppressWarnings("unchecked")
 		List<User> listUser = (List<User>) c.list();

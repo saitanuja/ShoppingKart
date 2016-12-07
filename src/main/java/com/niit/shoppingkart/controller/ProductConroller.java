@@ -67,7 +67,7 @@ public class ProductConroller {
 		productDAO.saveOrUpdate(product);
 		 MultipartFile file=product.getImage();
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "\\images\\"+product.getId()+".jpg");
+        path = Paths.get(rootDirectory + "\\resources\\images\\"+product.getId()+".jpg");
         if (file != null && !file.isEmpty()) {
             try {
             	System.out.println("Image Saving Start");

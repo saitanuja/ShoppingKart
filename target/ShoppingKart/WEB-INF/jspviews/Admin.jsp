@@ -14,47 +14,61 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<title>Admin</title>
-<!-- <body background="C:\Users\majjipoojihta\Desktop\dha3\s8.jpg" ng-app="myApp"> -->
+<title>tanuja Projecct</title>
+<body background="C:\Users\majjipoojihta\Desktop\dha3\s8.jpg" ng-app="myApp">
 </head>
 <body ng-app="myApp">
 ${message}
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-         </div>
+      <!-- --<a class="navbar-brand" href="#"><img alt="logo" src="D:\images\R1.jpg" width="35" height="35"></a>-->
+    </div>
     <ul class="nav navbar-nav">
+     <i class="fa fa-opencart" aria-hidden="true"></i> Online Bazaar</a>
+          <a class="navbar-brand" style="font-size:15px;"><span class="glyphicon glyphicon-user"></span> WELCOME ADMIN </a>
        <li><a class="active" href="Supplier">Supplier</a></li>
       <li><a href="Product">Product</a></li>
       <li><a href="Category">Category</a></li>
        
     </ul>
+    <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;"> 
+       <li><a href="Home">CONTACT US</a></li>  
+	  <li><a href="perform_logout">LOGOUT</a></li>
+
+					  
+   </ul>
   </div>
 </nav>
 ${msg}
 ${msg1 }
-<h1>Welcome Admin</h1>
-<div align="right"><a href=<c:url value="perform_logout"/>>logout</a></div>
+<h1>welcome tanuja </h1>
 
 <c:choose>
-<c:when test="${UserClickedsuppliers}">
-<c:import url="/WEB-INF/jspview/Supplier.jsp"></c:import>
+<c:when test="${UserClickedSupplier}">
+<c:import url="/WEB-INF/jspviews/Supplier.jsp"></c:import>
 </c:when>
 </c:choose>
 
 <c:choose>
-<c:when test="${UserClickedProducts}">
-<c:import url="/WEB-INF/jspview/Product.jsp"></c:import>
+<c:when test="${UserClickedProduct}">
+<c:import url="/WEB-INF/jspviews/Product.jsp"></c:import>
 </c:when>
 </c:choose> 
 <c:choose>
-<c:when test="${UserClickedCategorys}">
-<c:import url="/WEB-INF/jspview/Category.jsp"></c:import>
+<c:when test="${UserClickedCategory}">
+<c:import url="/WEB-INF/jspviews/Category.jsp"></c:import>
 </c:when>
 </c:choose>
+<%-- <c:choose>
+<c:when test="${UserClickedContactUs}">
+<c:import url="/WEB-INF/jspviews/Home.jsp"></c:import>
+</c:when>
+</c:choose> --%>
+
 <div class="ng-view"></div>
 
-<!-- <script>
+<script>
 var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
@@ -68,6 +82,6 @@ app.config(function($routeProvider) {
         templateUrl : "Product"
     });
 });
-</script>  -->
+</script> 
 </body>
 </html>

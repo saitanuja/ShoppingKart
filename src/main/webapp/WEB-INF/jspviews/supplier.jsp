@@ -6,14 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Supplier</title>
+<%-- <meta charset="ISO-8859-1">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/background.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />"
-	rel="stylesheet">
+	rel="stylesheet"> --%>
 <script>
 	var app = angular.module('myApp', []);
 	function MyController($scope, $http) {

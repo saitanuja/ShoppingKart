@@ -13,9 +13,9 @@ public interface UserDAO {
 
 	public void delete(int id);
 	
-	public boolean isValidUser(String userName,String password);
+	public boolean isValidUser(String username,String password);
 	
-	public User get(String userName);
+	public User get(String username);
 
 
 }
