@@ -38,7 +38,7 @@
 	<div class="container row ">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6">
-			<c:url var="addAction" value="addproduct"></c:url>
+			<c:url var="addAction" value="updateproduct"></c:url>
 			<form:form action="${addAction}" method="post" enctype="multipart/form-data"  modelAttribute="product"
 				>
 				<table>

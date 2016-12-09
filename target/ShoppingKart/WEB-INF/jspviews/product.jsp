@@ -6,14 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Product</title>
+<%-- <meta charset="ISO-8859-1">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/background.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />"
-	rel="stylesheet">
+	rel="stylesheet"> --%>
 <script>
 	var app = angular.module('myApp', []);
 	function MyController($scope, $http) {
@@ -37,7 +38,7 @@
 	<div class="container row ">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6">
-			<c:url var="addAction" value="addproduct"></c:url>
+			<c:url var="addAction" value="updateproduct"></c:url>
 			<form:form action="${addAction}" method="post" enctype="multipart/form-data"  modelAttribute="product"
 				>
 				<table>
@@ -182,8 +183,7 @@
 							 <td><c:out value="${product.supplierid}"/></td> 
 							<td><c:out value="${product.categoryid}"/></td> 
 							<td><div class="thumbnail">
-								<img height="300px" width="100px" alt="${product.id }"
-									src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
+								<img height="300px" width="100px" alt="${product.id }"src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
 							</div>
 						    <td><a class="btn btn-info btn-xs"
 								href="editById/${product.id}">Edit</a></td>

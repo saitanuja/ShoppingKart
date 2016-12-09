@@ -51,10 +51,10 @@ width:100%;
 </sec:authorize>
     </div>
      <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;">    
-      <li><a href="HOME">HOME</a></li>
+      <li><a href="Home">HOME</a></li>
        <sec:authorize access="!isAuthenticated()">
-      <li><a href="REGISTER">REGISTER</a></li>
-      <li><a href="LOGIN">LOGIN</a></li>
+      <li><a href="Register">REGISTER</a></li>
+      <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
 	  <li><a href="CONTACTUS">CONTACT US</a></li>
    <sec:authorize access="isAuthenticated()">

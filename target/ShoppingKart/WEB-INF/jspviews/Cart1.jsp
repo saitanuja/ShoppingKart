@@ -32,7 +32,7 @@ body {
 
 
  <div class="text-center" >
-  <h1 style="font-family:Georgia; font-size:40px;"><i>Mr.Online</i>
+  <h1 style="font-family:Georgia; font-size:40px;"><i>Omline Bazaar</i>
   
    <!--  <img  src="https://egybikers.com/images/dealershowroom/facebook%20profile%20pic.jpg" alt="logo" width="60px" height="60px" align="left"" >
   <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png" alt="fb" width="30px" height="30px" align="right" >
@@ -58,9 +58,9 @@ body {
       </li>
       
     
-      <li><a href="index">HOME</a></li>
+      <li><a href="header">HOME</a></li>
        <sec:authorize access="!isAuthenticated()">
-      <li><a href="Registration">REGISTER</a></li>
+      <li><a href="Register">REGISTER</a></li>
       <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
 	  <li><a href="ABOUTUS">ABOUT US</a></li>
@@ -121,7 +121,7 @@ body {
 								<div
 									style="display: table-cell; vertical-align: middle; text-align: center">
 									<img width="50%" alt="Empty Cart"
-										src="<c:url value="/resources/images/emptycart.jpg"></c:url>">
+										src="<c:url value="/resources/images/.jpg"></c:url>">
 								</div>
 							</c:if> --%>
 							<c:if test="${!empty CartList}">
@@ -131,7 +131,7 @@ body {
 										<div class="col-xs-6">
 										<a href="IndividualItem/${cart.productid}">
 											<img height="72px" width="72px"  alt="${cart.productid}"
-											src="<c:url value="/resources/images/product/${cart.productid}.jpg"></c:url>">
+											src="<c:url value="/resources/images/${cart.productid}.jpg"></c:url>">
 											</a>
 										</div>
 										<div class="col-xs-6" style="padding-top: 22px" >

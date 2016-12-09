@@ -6,14 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Category</title>
+<%-- <meta charset="ISO-8859-1">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/background.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/font-awesome.min.css" />"
-	rel="stylesheet">
+	rel="stylesheet"> --%>
 <script>
 	var app = angular.module('myApp', []);
 	function MyController($scope, $http) {
@@ -108,13 +109,13 @@
 			<div class="container" data-ng-app="myApp"
 				data-ng-controller="MyController" data-ng-init="getDataFromServer()"
 				style="overflow: auto; height: 400px; width: 70%">
-				<%-- <form>
+				 <form>
 					<input
 						class="w3-input w3-animate-input w3-border w3-round w3-small"
 						data-ng-model="search" type="text" placeholder=" Search Category"
 						style="width: 20%">
 
-				</form> --%>
+				</form> 
 				<br>
 				<table class="table table-bordered table-hover ">
 					<thead>

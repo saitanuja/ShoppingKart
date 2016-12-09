@@ -71,7 +71,6 @@
     </div>
   </div>
 </nav>
-
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -113,7 +112,6 @@
     </a>
   </div>
 </div> 
-
 </body>
   ${errorMessage} 
 ${registerMessage}
@@ -224,6 +222,8 @@ ${registerMessage}
 <!-- <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer> -->
+
+
 
 </body>
 </html>

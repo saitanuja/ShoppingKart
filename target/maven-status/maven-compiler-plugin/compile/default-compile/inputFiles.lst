@@ -7,7 +7,6 @@ F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\CategoryDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\SupplierDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Category.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAO\SupplierDAO.java
-F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\ProductConroller.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAO\CategoryDAO.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\HomeController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\CategoryController.java
@@ -23,6 +22,7 @@ F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Supplier.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\CartController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\MultiPartController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Cart1.java
+F:\ShoppingKart\src\main\java\com\niit\shoppingkart\controller\ProductController.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAOImpl\CheckoutDAOImpl.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\DAO\CheckoutDAO.java
 F:\ShoppingKart\src\main\java\com\niit\shoppingkart\model\Product.java

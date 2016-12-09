@@ -19,7 +19,6 @@ com\niit\shoppingkart\DAOImpl\UserDAOImpl.class
 com\niit\shoppingkart\controller\HomeController.class
 com\niit\shoppingkart\DAO\CheckoutDAO.class
 com\niit\shoppingkart\DAOImpl\SupplierDAOImpl.class
-com\niit\shoppingkart\controller\ProductConroller.class
 com\niit\shoppingkart\model\Supplier.class
 com\niit\shoppingkart\config\ApplicationContextConfig.class
 com\niit\shoppingkart\controller\UserController.class
@@ -27,3 +26,4 @@ com\niit\shoppingkart\model\User.class
 com\niit\shoppingkart\model\Cart.class
 com\niit\shoppingkart\DAOImpl\CategoryDAOImpl.class
 com\niit\shoppingkart\controller\CartController.class
+com\niit\shoppingkart\controller\ProductController.class

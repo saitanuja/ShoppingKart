@@ -32,7 +32,6 @@
       margin: auto;
       min-height:200px;
   }
-
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
@@ -94,11 +93,11 @@
       </div>
     
       <div class="item">
-        <img src="F:\ShoppingKart\src\main\webapp\resources\images\castle nature.jpg" alt="Nature" width="460" height="345">
+        <img src="F:\ShoppingKart\src\main\webapp\resources\images\lumia-532.jpg" alt="phone" width="460" height="345">
       </div>
 
       <div class="item">
-        <img src="F:\ShoppingKart\src\main\webapp\resources\images\pencils nature.jpg" alt="Sea" width="460" height="345">
+        <img src="F:\ShoppingKart\src\main\webapp\resources\images\books.jpg" alt="book" width="460" height="345">
       </div>
     </div>
 

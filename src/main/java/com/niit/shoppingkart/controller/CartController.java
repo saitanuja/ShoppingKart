@@ -32,7 +32,7 @@ public class CartController {
 	 @RequestMapping(value="/Cart")
 	 public ModelAndView Cartpage(HttpSession session)
 	 {
-	  ModelAndView  mv=new ModelAndView("index");
+	  ModelAndView  mv=new ModelAndView("header");
 	  mv.addObject("UserClickedCart","true");
 	  return mv;
 	  

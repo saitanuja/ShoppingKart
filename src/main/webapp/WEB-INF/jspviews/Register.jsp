@@ -15,15 +15,62 @@
 </head>
 <body>
 <pre>
+
+
 <c:url var="addAction" value="adduser"></c:url>
 <form:form action="${addAction}" commandName="user" method="post">
-<form:label path="name"><spring:message text="Name" /></form:label><form:input path="name" required="true" />
+<center>
+<table>
+              <h3> <font color=green>Register page</font></h3>
+                   <tr>
+						<td><form:label class="btn btn-default btn-block" path="name">
+								<spring:message text="Name" />
+							</form:label></td>
+						<td><form:input class="form-control" path="name"
+								required="true" /></td>
+					</tr>
+					<tr>
+						<td><form:label class="btn btn-default btn-block" path="username">
+								<spring:message text="UserName" />
+							</form:label></td>
+						<td><form:input class="form-control" path="username"
+								required="true" /></td>
+					</tr>
+					<tr>
+						<td><form:label class="btn btn-default btn-block" path="password">
+								<spring:message text="Password" />
+							</form:label></td>
+						<td><form:input class="form-control" path="password" 
+						required ="true"/></td>
+					</tr>
+					<tr>
+						<td><form:label class="btn btn-default btn-block" path="mobile">
+								<spring:message text="Mobile number" />
+							</form:label></td>
+						<td><form:input class="form-control" path="mobile"
+								required="true" /></td>
+					</tr>
+					<tr>
+						<td><form:label class="btn btn-default btn-block" path="email">
+								<spring:message text="Email" />
+							</form:label></td>
+						<td><form:input class="form-control" path="email"
+								required="true" /></td>
+								</tr>
+								</table>
+								</center>
+						<input class="btn btn-primary disabled" type="submit"
+						value="signup" /> <a href="Login">LOGIN</a>
+					
+<%-- <form:label path="name"><spring:message text="Name" /></form:label><form:input path="name" required="true" />
 <form:label path="username"><spring:message text="username" /></form:label><form:input path="username" required="true" />
 <form:label path="password"><spring:message text="Password" /></form:label><form:input path="password" required="true" />
 <form:label path="mobile"><spring:message text="Mobile Number" /></form:label><form:input path="mobile" required="true" />
 <form:label path="email"><spring:message text="Email" /></form:label><form:input path="email" required="true" />
-<input type="submit" value="signup"/>
+<input type="submit" value="signup"/> --%>
+
 </form:form>
+
 </pre>
 
 
