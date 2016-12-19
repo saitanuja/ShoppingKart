@@ -44,18 +44,18 @@ body {
   
      <nav class="navbar navbar-inverse">
   <div class="container-fluid"> 
-     <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;">
-       <%--  <li class="dropdown" >
+    <%--  <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;">
+         <li class="dropdown" >
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <c:forEach items="${allCategory}" var="category">
-				<a href="navproduct/${category.id }"><c:out value="${category.name}" /></a> 
+          <c:forEach items="${categoryList}" var="category">
+				<a href="navproduct/${category.cid }"><c:out value="${category.cname}" /></a> 
 						
 					</c:forEach>
         </ul>
-      </li> --%>
-      
+      </li> 
+       --%>
     
       <!-- <li><a href="header">HOME</a></li> -->
        <sec:authorize access="!isAuthenticated()">

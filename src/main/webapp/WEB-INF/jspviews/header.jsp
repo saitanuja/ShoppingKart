@@ -9,12 +9,15 @@
 <html lang="en">
 <head>
   <title>Online of shoppingKart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+ <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -42,7 +45,29 @@
 </head>
 <body>
 <h1><center>Online Bazaar</center></h1>
-<nav class="navbar navbar-inverse">
+<div class="w3-container">
+ <ul class="w3-navbar w3-black">
+    <li><a href="#">shopping</a></li>
+ <li class="w3-dropdown-hover">
+      <a href="#">Category</a>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+          <c:forEach items="${categoryList}" var="obj">
+				<a href="navproduct/${obj.cid }"><c:out value="${obj.cname}" /></a> 
+						
+					</c:forEach>
+					</div>
+       
+     <li><li class="w3-right"><a href="Register">Signup</a></li>
+   <li><li class="w3-right"><a href="Login"><i class="fa fa-sign-in"></i></a></li>
+     <sec:authorize access="isAuthenticated()">
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="Cart"><span class="glyphicon glyphicon-user"></span>Cart</a></li>
+	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
+	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a></li></ul>
+</sec:authorize>
+  </ul>
+  </div>
+<%-- <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -69,7 +94,7 @@
          </ul>   
     </div>
   </div>
-</nav>
+</nav> --%>
 
 <div class="container">
   <br>
@@ -134,6 +159,8 @@ ${registerMessage}
 <jsp:include page="Cart1.jsp"></jsp:include></c:if>   
 <c:if test="${UserClickedshowproduct}">
 <jsp:include page="ShowProduct.jsp"></jsp:include></c:if>  
+<c:if test="${Clickedcatproduct}">
+<jsp:include page="catproducts.jsp"></jsp:include></c:if>  
 <div>  
 
           
@@ -196,33 +223,13 @@ ${registerMessage}
 			</c:import>
 		</c:when>
 		</c:choose> 
+<c:choose>
+		<c:when test="${Clickedcatproduct}">
+			<c:import url="/WEB-INF/jspviews/catproducts.jsp">
+			</c:import>
+		</c:when>
+		</c:choose> 
 
-  <br>
-<!-- <div class="container text-center">    
-  <h3>What We Do</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="F:\ShoppingKart\src\main\webapp\resources\images\laptops.jpg" class="img-responsive" style="width:100%" alt="laptops">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-4"> 
-      <img src="F:\ShoppingKart\src\main\webapp\resources\images\portfolio-img2.jpg" class="img-responsive" style="width:100%" alt="portfolio">
-      <p>Project 2</p>    
-    </div> -->
-    <!-- <div class="col-sm-4">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-  </div> -->
-</div><br>
-
-<!-- <footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer> -->
-
+ 
 </body>
 </html>

@@ -34,7 +34,7 @@ public class SupplierController {
 	@RequestMapping(value="/Supplier")
 	public ModelAndView getAllData(@ModelAttribute("supplier")Supplier supplier,BindingResult result,Model model)
 	{
-		ModelAndView mv = new ModelAndView("/header");
+		ModelAndView mv = new ModelAndView("/Admin");
 		mv.addObject("supplierList",supplierDAO.list());
 		mv.addObject("UserClickedsuppliers","true");
 			return mv;

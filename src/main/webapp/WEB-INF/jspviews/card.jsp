@@ -18,20 +18,20 @@
   <style>
   footer {
     
-    margin-top: 100px;
+    margin-top: 50px;
     
 } 
 body {
-width:100%;
+width:50%;
 }
   </style>
 </head>
 <body  style="background-color:#ffffff;">
 
- <div class="text-center" >
+<!--  <div class="text-center" >
   <h1 style="font-family:Georgia; font-size:40px;"><i>Online Bazaar</i>
 
-
+ -->
 
 <!--  <div class="text-left" >
   <h1 style="font-family:Georgia; font-size:30px;"><i>SHOPIN </i>
@@ -55,26 +55,15 @@ width:100%;
 </sec:authorize>
     </div>
      <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;">
-      <%--  <li class="dropdown" >
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">CATEGORIES
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <c:forEach items="${allCategory}" var="category">
-				<a href="navproduct/${category.id }"><c:out value="${category.name}" /></a>
-							<br>
-						
-					</c:forEach>
-        </ul>
-      </li> --%>
       
     
-      <li><a href="Home">HOME</a></li>
+      <!-- <li><a href="Home">HOME</a></li> -->
        <sec:authorize access="!isAuthenticated()">
       <li><a href="Register">REGISTER</a></li>
       <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
 <!-- 	  <li><a href="ABOUTUS">ABOUT US</a></li> -->
-	  <li><a href="CONTACTUS">CONTACT US</a></li>
+	  <!-- <li><a href="CONTACTUS">CONTACT US</a></li> -->
    <sec:authorize access="isAuthenticated()">
    <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
 	<li><a href="<c:url value="/perform_logout" />"><p>LOGOUT<span class="glyphicon glyphicon-log-out"></span></p></a></li>
@@ -97,6 +86,7 @@ width:100%;
        
       </div>
      </div>
+     <br>
      <div class="panel-body">
        <form method="post" action="${flowExecutionUrl}">
         <input type="hidden" name="_eventId" value="continue">

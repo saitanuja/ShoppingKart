@@ -1,85 +1,78 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Product</title>
-<%-- <meta charset="ISO-8859-1">
 
+ <style>
+ h3{
+    text-align: center;
+    }
+ /* table {
+    border-collapse: collapse;
+    width: 100%;
+} */
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+/* tr:nth-child(even){background-color: #f2f2f2}
+th {
+    background-color: #ffe6e6;
+    color: white;
+} */
+</style>
+
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="/resources/table1.css" />">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/background.css" />"
-	rel="stylesheet">
-<link href="<c:url value="/resources/css/font-awesome.min.css" />"
-	rel="stylesheet"> --%>
-<script>
-	var app = angular.module('myApp', []);
-	function MyController($scope, $http) {
-		$scope.sortType = 'name'; // set the default sort type
-		$scope.sortReverse = false; // set the default sort order
-		$scope.search = '';
-		$scope.getDataFromServer = function() {
-			$http({
-				method : 'GET',
-				url : 'productgson'
-			}).success(function(data, status, headers, config) {
-				$scope.products = data;// alert(data); 
-			}).error(function(data, status, headers, config) {
-			});
-		};
-	};
-</script>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<title>New Product Details</title>
 </head>
-<body style="padding-top: 75px">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
+<!-- <style>
+body  {
+   
+    background-color: #ffe6e6  ;
+}
+</style> -->
+<body>
+<h3><font color=green>Product page</font></h3>
 
-	<div class="container row ">
-		<div class="col-sm-3"></div>
-		<div class="col-sm-6">
-			<c:url var="addAction" value="updateproduct"></c:url>
-			<form:form action="${addAction}" method="post" enctype="multipart/form-data"  modelAttribute="product"
-				>
-				<table>
-					<tr>
-						<c:choose>
-							<c:when test="${!empty SuccessMessage}">
-								<td colspan="2">
-									<div class="alert alert-success fade in">
-										<a href="#" class="close" data-dismiss="alert"
-											aria-label="close">&times;</a>${SuccessMessage}
-									</div>
-								</td>
-							</c:when>
-							<c:when test="${!empty DeleteMessage}">
-								<td colspan="2">
-									<div class="alert alert-danger fade in">
-										<a href="#" class="close" data-dismiss="alert"
-											aria-label="close">&times;</a>${DeleteMessage}
-									</div>
-								</td>
-							</c:when>
-						</c:choose>
-					<tr>
-                       <h3><font color=green><center>Product page</center></font></h3>
-						<c:choose>
-						 <c:when test="${product.id gt 0}"> 
-								<td><form:label class="btn btn-default btn-block" path="id">
+	<div class="text-center myForm">
+		<c:url var="action" value="updateproduct"></c:url>
+		<form:form action="${action}" modelAttribute="product"
+			enctype="multipart/form-data" method="post">
+			<div align="center">
+			<table>
+				<c:choose>
+					<c:when test="${product.id gt 0}">
+						<tr>
+							<td><form:label class="btn btn-default btn-block" path="id">
 										<spring:message text="Id" />
 									</form:label></td>
-								<td><form:input class="form-control" path="id" readonly="true" /></td>
-							 </c:when> 
-							
-						</c:choose>
-					<tr>
+	                       </tr>
+					</c:when>
+				</c:choose>
+				
+				<tr>
 						<td><form:label class="btn btn-default btn-block" path="name">
 								<spring:message text="Name" />
 							</form:label></td>
 						<td><form:input class="form-control" path="name"
 								required="true" /></td>
 					</tr>
-					<tr>
+				
+				<tr>
 						<td><form:label class="btn btn-default btn-block"
 								path="description">
 								<spring:message text="Description" />
@@ -87,7 +80,7 @@
 						<td><form:input class="form-control" path="description"
 								required="true" /></td>
 					</tr>
-					<tr>
+				<tr>
 						<td><form:label class="btn btn-default btn-block"
 								path="price">
 								<spring:message text="Price" />
@@ -95,111 +88,89 @@
 						<td><form:input type="number" class="form-control" min="100"
 								step="1" path="price" required="true" /></td>
 					</tr>
-					 <tr>
-						<td><form:label class="btn btn-default btn-block"
-								path="supplierid">
-								<spring:message text="Supplier" />
-							</form:label></td>
-						<td><form:select path="supplierid" class="form-control"
-								required="true">
-								<c:forEach items="${supplierList}" var="supplier">
-									<form:option class="form-control" value="${supplier.sid}">${supplier.sname}</form:option>
-								</c:forEach>
-							</form:select></td>
-					</tr>
-					<tr>
-						<td><form:label class="btn btn-default btn-block"
+				<tr>
+				<td><form:label class="btn btn-default btn-block"
 								path="categoryid">
 								<spring:message text="Category" />
 							</form:label></td>
 						<td><form:select class="form-control" path="categoryid"
 								required="true">
-								<c:forEach items="${categoryList}" var="category">
-									<form:option class="form-control" value="${category.cid}">${category.cname}</form:option>
-								</c:forEach>
-							</form:select></td>
-					</tr> 
-					<tr>
+				<c:forEach items="${categoryList}" var="category">
+								<form:option class="input1" value="${category.cid}">${category.cname}</form:option>
+							</c:forEach>
+								</form:select></td></tr>
+						<tr>
+								<td><form:label class="btn btn-default btn-block"
+								path="supplierid">
+								<spring:message text="Supplier" />
+							</form:label></td>
+						<td><form:select path="supplierid" class="form-control"
+								required="true">
+				<c:forEach items="${supplierList}" var="supplier">
+								<form:option class="input1"  value="${supplier.sid}">${supplier.sname}</form:option>
+							</c:forEach>
+								</form:select></td></tr>
+								
+					
+				
+				<tr>
 					<td><form:label class="btn btn-default btn-block"
 								path="image">
-								<spring:message text="image" />
+								<spring:message text="Image" />
 							</form:label></td>
 					<td><form:input type="file"
 							class=" btn btn-default btn-block form-control" path="image"
 							required="true" /></td>
 				</tr>
-					
-					<tr>
 				</table>
 				<br>
-				<c:if test="${!empty product.name}">
-					<input class="btn btn-block btn-primary" type="submit" value="Edit Product" />
-				</c:if>
-				<c:if test="${empty product.name}">
-					<input class="btn btn-block btn-primary" type="submit" value="Add Product" />
-				</c:if>
-			</form:form>
-		</div>
-		<div class="col-sm-3"></div>
+				<div class="w3-container">
+					<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge">Add product</button>
+					
+				</div>
+			</div>
+		</form:form>
 	</div>
-	<!--  -->
-
-	<c:choose>
-		<c:when test="${!EditProduct}">
-
-			<div class="container" data-ng-app="myApp"
-				data-ng-controller="MyController" data-ng-init="getDataFromServer()"
-				style="overflow: auto; height: 400px; width: 80%">
-				<%-- <form>
-					<input
-						class="w3-input w3-animate-input w3-border w3-round w3-small"
-						data-ng-model="search" type="text" placeholder=" Search Product"
-						style="width: 20%">
-
-				</form> --%>
-				<br>
-				<table class="table table-bordered table-hover ">
-					<thead>
-						<tr>
-							<th> ID</th>
-							<th> Name</th>
-							<th> Description</th>
-							<th> Price</th>
-							 <th>Supplier</th> 
-							<th>Category </th> 
-							<th>Image</th>
-							<th>Edit</th>
-							<th>Delete</th>
-						</tr>
-					</thead>
-					<c:forEach var="product" items="${productList}">
-					<tbody>
-						<tr
-							data-ng-repeat="product in products | orderBy:sortType:sortReverse | filter:search">
-							<td><c:out value="${product.id}"/></td>
-							<td><c:out value="${product.name}"/></td>
-							<td><c:out value="${product.description}"/></td>
-							<td><c:out value="${product.price}"/></td>
-							 <td><c:out value="${product.supplierid}"/></td> 
-							<td><c:out value="${product.categoryid}"/></td> 
-							<td><div class="thumbnail">
-								<img height="300px" width="100px" alt="${product.id }"src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
-							</div>
-						    <td><a class="btn btn-info btn-xs"
+	<div align="center">
+		<table class="table table-bordered table-hover ">
+			
+			<thead>
+			
+				 <tr id="tr1">
+					<th>Product Id</th>
+					<th>Product Name</th>
+					<th>Product Description</th>
+					<th>Product Price</th>
+					<th>Category</th>
+					<th>Supplier</th>
+					<th>Image</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${productList}" var="product">
+					<tr id="tr1">
+						<td id="td1"><c:out value="${product.id}" />
+						<td id="td1"><c:out value="${product.name}" />
+						<td id="td1"><c:out value="${product.description}" />
+						<td id="td1"><c:out value="${product.price}" />
+						<td id="td1"><c:out value="${product.categoryid}" />
+						<td id="td1"><c:out value="${product.supplierid}" />
+						<td><div class="thumbnail">
+			<img height="100px" width="100px" alt="${product.id }"src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
+							</div> 
+						<td><a class="btn btn-info btn-xs"
 								href="editById/${product.id}">Edit</a></td>
 							<td><a class="btn btn-danger btn-xs"
 								href="deleteById/${product.id}">Delete</a></td>
-						</tr>
-					</tbody>
-					</c:forEach>
-				</table>
-			</div>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 
-		</c:when>
-		<c:otherwise>
-			<div style="margin-bottom: 70px"></div>
-		</c:otherwise>
-	</c:choose>
-
+	</div>
+	
+	
 </body>
-</html>
+</html> 

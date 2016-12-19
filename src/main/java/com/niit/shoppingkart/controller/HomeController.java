@@ -29,4 +29,11 @@ public class HomeController {
 	    	m.addAttribute("IndividualProduct", productDAO.getproduct(id));
 	    	return "ShowProduct";
 	    }
+	    @RequestMapping(value="navproduct/{id}")
+	    public String navproduct(Model m,@PathVariable("id") int id ){
+
+	    	m.addAttribute("Clickedcatproduct", "true");
+	    	m.addAttribute("navproducts", productDAO.navproduct(id));
+	    	return "catproducts";
+	    }
 	}
