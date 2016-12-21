@@ -28,20 +28,7 @@ width:50%;
 </head>
 <body  style="background-color:#ffffff;">
 
-<!--  <div class="text-center" >
-  <h1 style="font-family:Georgia; font-size:40px;"><i>Online Bazaar</i>
 
- -->
-
-<!--  <div class="text-left" >
-  <h1 style="font-family:Georgia; font-size:30px;"><i>SHOPIN </i>
-    <img  src="https://www.sitewelder.com/art2012/logo-big-shopping.png" alt="logo" width="40px" height="40px" align="left" >
-  <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/768px-F_icon.svg.png" alt="fb" width="25px" height="25px" align="right" >
-  <img  src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png" alt="twitter" width="25px" height="25px" align="right" >
-  <img  src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="linkedin" width="25px" height="25px" align="right" >
-  </h1>
-  
-  </div> -->
   
      <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid"> 
@@ -63,7 +50,7 @@ width:50%;
       <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
 <!-- 	  <li><a href="ABOUTUS">ABOUT US</a></li> -->
-	  <!-- <li><a href="CONTACTUS">CONTACT US</a></li> -->
+	  <li><a href="Contact">CONTACT US</a></li> 
    <sec:authorize access="isAuthenticated()">
    <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
 	<li><a href="<c:url value="/perform_logout" />"><p>LOGOUT<span class="glyphicon glyphicon-log-out"></span></p></a></li>
@@ -72,7 +59,7 @@ width:50%;
    </ul>
    </div>
   </nav>
-  
+  <br><br><br><br>
 
         <div class="container">
   <div class="row col-xs-4"></div>
@@ -157,7 +144,7 @@ width:50%;
 </div>
      
 </div> 
-
+	 
 
         
 </body>

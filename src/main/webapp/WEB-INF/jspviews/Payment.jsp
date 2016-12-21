@@ -56,7 +56,7 @@ width:100%;
       <li><a href="Register">REGISTER</a></li>
       <li><a href="Login">LOGIN</a></li>
       </sec:authorize>
-	  <li><a href="CONTACTUS">CONTACT US</a></li>
+	  <li><a href="Contact">CONTACT US</a></li>
    <sec:authorize access="isAuthenticated()">
    <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
 	<li><a href="<c:url value="/perform_logout" />"><p>LOGOUT<span class="glyphicon glyphicon-log-out"></span></p></a></li>
@@ -92,7 +92,7 @@ width:100%;
         </div>
         </div>
         </div>
-        <br><br><br><br><br><br>
+        <br><br>
         <%@include file="Footer.jsp"%>	
 </body>
 </html>

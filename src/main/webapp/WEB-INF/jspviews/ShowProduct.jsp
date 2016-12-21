@@ -75,6 +75,6 @@ width:100%;
 						</c:forEach>
 						</div>
 
-
+ <%@include file="Footer.jsp"%>	 
 </body>
 </html>

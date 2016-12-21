@@ -39,12 +39,7 @@ th {
 <style>
 .w3-btn {margin-bottom:10px;}
 </style>
-<!-- <style>
-body  {
-   
-    background-color: #ffe6e6  ;
-}
-</style> -->
+
 <body>
 <h3><font color=green>Product page</font></h3>
 
@@ -171,6 +166,6 @@ body  {
 
 	</div>
 	
-	
+	 
 </body>
 </html> 

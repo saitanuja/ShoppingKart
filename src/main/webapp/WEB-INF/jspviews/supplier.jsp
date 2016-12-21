@@ -8,6 +8,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+<style>
+ h3{
+    text-align: center;
+    }
+ /* table {
+    border-collapse: collapse;
+    width: 100%;
+} */
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+/* tr:nth-child(even){background-color: #f2f2f2}
+th {
+    background-color: #ffe6e6;
+    color: white;
+} */
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <title>Supplier</title>
@@ -105,7 +123,7 @@
           </table> 
  </form:form>
   
-
+ 
 
 </body>
 </html> 

@@ -41,13 +41,17 @@
       display: none; 
     }
   }
+  
+ 
+  
+
   </style>
 </head>
 <body>
 <h1><center>Online Bazaar</center></h1>
 <div class="w3-container">
  <ul class="w3-navbar w3-black">
-    <li><a href="#">shopping</a></li>
+    
  <li class="w3-dropdown-hover">
       <a href="#">Category</a>
       <div class="w3-dropdown-content w3-white w3-card-4">
@@ -56,16 +60,20 @@
 						
 					</c:forEach>
 					</div>
-       
+					</li>
+       <sec:authorize access="!isAuthenticated()">
      <li><li class="w3-right"><a href="Register">Signup</a></li>
    <li><li class="w3-right"><a href="Login"><i class="fa fa-sign-in"></i></a></li>
+   </sec:authorize>
+  
      <sec:authorize access="isAuthenticated()">
-     <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
       <li><a href="Cart"><span class="glyphicon glyphicon-user"></span>Cart</a></li>
 	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
 	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a></li></ul>
 </sec:authorize>
   </ul>
+ 
   </div>
 <%-- <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -162,7 +170,9 @@ ${registerMessage}
 <c:if test="${Clickedcatproduct}">
 <jsp:include page="catproducts.jsp"></jsp:include></c:if>  
 <div>  
-
+<c:if test="${UserClickedContact}">
+<jsp:include page="Contact.jsp"></jsp:include></c:if>  
+<div>  
           
 <c:forEach items="${productList}" var="product">
 			<tr>
@@ -230,6 +240,87 @@ ${registerMessage}
 		</c:when>
 		</c:choose> 
 
- 
+ <c:choose>
+		<c:when test="${UserClickedContact}">
+			<c:import url="/WEB-INF/jspviews/Contact.jsp">
+			</c:import>
+		</c:when>
+		</c:choose> 
+		
+		<div>
+		<c:choose>
+			<c:when test="${!Administrator}">
+				<c:if test="${empty HideOthers}">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>OUR COMPANY</th>
+								<th>TOP CATEGORIES</th>
+								<th>POLICIES AND INFO</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+
+								<td>About us<br> Online Bazaar <br> Ethnico<br>
+									Place of Origin<br> Blog<br>
+								</td>
+
+								<td>Sarees<br> Lehenga<br> Jewellery<br>
+									Accessories<br> Salwar Suits<br></td>
+								<td>Terms & Conditions<br> Policy for Sellers<br>
+									Policy for Buyers<br> Shipping & Refund Policies<br>
+									Wholesale Policy<br> Privacy Policy<br></td>
+							</tr>
+
+							<tr>
+								<th>SUPPORT</th>
+								<th>PAYMENT OPTIONS</th>
+								<th>STAY CONNECTED</th>
+							</tr>
+
+
+							<tr>
+								<td><i class="fa fa-envelope"
+									style="font-size: 30px; color: blue"></i> <a
+									href="mailto:support@company.com">support@onlineBazaar.com</a><br>
+									
+									
+									<br></td>
+								<td><div class="footer-icons">
+										<a href=""><i class="fa fa-facebook-official"
+											style="font-size: 30px; color: blue"></i> <a href=""><i
+												class="fa fa-twitter"
+												style="font-size: 30px; color: #00ffff"></i></a> <a href=""><i
+												class="fa fa-linkedin-square"
+												style="font-size: 30px; color: blue"></i></a> <a href=""><i
+												class="fa fa-google" style="font-size: 30px; color: #3366ff"></i></a>
+											<a href=""><i class="fa fa-google-plus-official"
+												style="font-size: 30px; color: red"></i></a> <a href=""><i
+												class="fa fa-whatsapp"
+												style="font-size: 30px; color: #33ff00"></i></a>
+									</div></td>
+								<td><a href=""><i class="fa fa-paypal"
+										aria-hidden="true" style="font-size: 30px; color: #0066ff"></i>
+								</a> . <a href=""><i class="fa fa-cc-amex" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a> . <a href=""><i
+										class="fa fa-cc-mastercard" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a> . <a href=""><i
+										class="fa fa-cc-visa" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a> . <a href=""><i
+										class="fa fa-credit-card" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a> . <a href=""><i
+										class="fa fa-google-wallet" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a> . <a href=""><i
+										class="fa fa-cc-stripe" aria-hidden="true"
+										style="font-size: 30px; color: #0066ff"></i> </a></td>
+						</tbody>
+					</table>
+				</c:if>
+			</c:when>
+		</c:choose>
+	</div>
+		
 </body>
 </html>

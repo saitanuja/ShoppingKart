@@ -34,7 +34,7 @@ ${message}
        
     </ul>
     <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;"> 
-       <!-- <li><a href="Home">CONTACT US</a></li> -->  
+        <li><a href="Contact">CONTACT US</a></li>  
 	  <li><a href="perform_logout">LOGOUT</a></li>
 
 					  
@@ -61,12 +61,12 @@ ${msg1 }
 <c:import url="/WEB-INF/jspviews/category.jsp"></c:import>
 </c:when>
 </c:choose>
-<%-- <c:choose>
-<c:when test="${UserClickedContactUs}">
-<c:import url="/WEB-INF/jspviews/Home.jsp"></c:import>
+ <%-- <c:choose>
+<c:when test="${UserClickedContact}">
+<c:import url="/WEB-INF/jspviews/Contact.jsp"></c:import>
 </c:when>
-</c:choose> --%>
-
+</c:choose> 
+ --%>
 <div class="ng-view"></div>
 
 <script>
@@ -83,6 +83,7 @@ app.config(function($routeProvider) {
         templateUrl : "Product"
     });
 });
-</script> 
+</script>
+ <%@include file="Footer.jsp"%>  
 </body>
 </html>

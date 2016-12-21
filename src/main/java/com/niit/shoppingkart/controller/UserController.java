@@ -51,6 +51,16 @@ public class UserController {
 		mv.addObject("message", "Registration Success");
 		return "redirect:/";
 	}
+	@RequestMapping(value = "Contact")
+	public String Displaycontact(Model mv) {
+		mv.addAttribute("UserClickedContact", "true");
+		return "Contact";
+	}
+	
+	
+	
+	
+	
 
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/login_session_attributes")
