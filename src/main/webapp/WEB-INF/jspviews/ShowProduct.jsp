@@ -26,23 +26,6 @@ width:100%;
 </head>
 <body>
  
-<%-- <c:forEach items="${IndividualProduct}" var="product">
-			<div class="col-xs-3 ">
-				<div class="img"><a href="IndividualProduct/${product.id}"></a>
-<h1><c:out value="${product.name }"/></h1>
-<div class="horizontal">
-<div class="thumbnail">
-<img height="300px" width="300px" alt="${product.id }"
-				src="<c:url value="/resources/images/product/${product.id }.jpg"></c:url>">
-		</div>
-		</div>
-		<div align="right">
-		<c:out value="${product.name}"/><br>
-						<c:out value="${product.price }"/><br>
-				</div>
-				</div>
--+				</div>
-</c:forEach> --%>
 
 
 	<div class="container">
@@ -50,7 +33,7 @@ width:100%;
 		<h2><c:out value="${product.name }"/></h2>
 			<div class="col-xs-6 w3-animate-left">
 				<div class="img">
-					<img  height="300px" width="300px" alt="${product.id}" src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
+					<img height="100px" width="100px" alt="${product.id }"src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
 					<div class="desc">
 					<%-- 	<strong>${product.name}</strong> --%>
 						
@@ -67,7 +50,8 @@ width:100%;
 						</div>
 						
 						<div class="form-group">
-							 <input type="text" class="form-control" value="Rs. ${product.price}" readonly="readonly">
+							 <input type="text" class="form-control" value="Rs. ${product.price}" readonly="readonly"><br>
+							 <input type="submit" class="btn btn-primary" value="Add To Cart" />
 						</div>
 						</div>
 						</div>
@@ -75,6 +59,6 @@ width:100%;
 						</c:forEach>
 						</div>
 
- <%@include file="Footer.jsp"%>	 
+ <%-- <%@include file="Footer.jsp"%>	 --%>
 </body>
 </html>

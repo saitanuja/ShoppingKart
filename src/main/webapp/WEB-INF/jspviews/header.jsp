@@ -48,7 +48,7 @@
   </style>
 </head>
 <body>
-<h1><center>Online Bazaar</center></h1>
+<h1><font color=green><center>Online Bazaar</center></font></h1>
 <div class="w3-container">
  <ul class="w3-navbar w3-black">
     
@@ -75,34 +75,7 @@
   </ul>
  
   </div>
-<%-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">ShoppingKart</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-       <ul>
-           <sec:authorize access="!isAuthenticated()">
-    
-      <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li></ul>
-      </sec:authorize>
-      <sec:authorize access="isAuthenticated()">
-     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Cart"><span class="glyphicon glyphicon-user"></span>Cart</a></li>
-	<li><a href="<c:url value="/perform_logout" />">Logout</a></li>
-	<li><a href="">Welcome  <sec:authentication property="principal.username"/></a></li></ul>
-</sec:authorize>
-         </ul>   
-    </div>
-  </div>
-</nav> --%>
+
 
 <div class="container">
   <br>
@@ -170,8 +143,7 @@ ${registerMessage}
 <c:if test="${Clickedcatproduct}">
 <jsp:include page="catproducts.jsp"></jsp:include></c:if>  
 <div>  
-<c:if test="${UserClickedContact}">
-<jsp:include page="Contact.jsp"></jsp:include></c:if>  
+ 
 <div>  
           
 <c:forEach items="${productList}" var="product">
@@ -246,7 +218,7 @@ ${registerMessage}
 			</c:import>
 		</c:when>
 		</c:choose> 
-		
+		<center>
 		<div>
 		<c:choose>
 			<c:when test="${!Administrator}">
@@ -321,6 +293,6 @@ ${registerMessage}
 			</c:when>
 		</c:choose>
 	</div>
-		
+		</center>
 </body>
 </html>

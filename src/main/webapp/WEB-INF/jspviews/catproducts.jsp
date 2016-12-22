@@ -31,7 +31,7 @@ width:100%;
 <body>
 
 
-
+<h1><font color=green>WELCOME TO SHOPPING</font></h1>
 
 
 <c:forEach items="${navproducts}" var="product">
@@ -56,7 +56,7 @@ width:100%;
 		</c:when>
 	</c:choose>
 
- <%@include file="Footer.jsp"%> 
+<%--  <%@include file="Footer.jsp"%>  --%>
 
 </body>
 </html>

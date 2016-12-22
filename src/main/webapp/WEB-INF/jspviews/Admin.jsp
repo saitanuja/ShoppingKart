@@ -34,7 +34,7 @@ ${message}
        
     </ul>
     <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;"> 
-        <li><a href="Contact">CONTACT US</a></li>  
+       
 	  <li><a href="perform_logout">LOGOUT</a></li>
 
 					  
@@ -84,6 +84,6 @@ app.config(function($routeProvider) {
     });
 });
 </script>
- <%@include file="Footer.jsp"%>  
+ 
 </body>
 </html>

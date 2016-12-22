@@ -53,7 +53,7 @@ width:100%;
 </sec:authorize>
     </div>
      <ul class="nav navbar-nav navbar-right" style="margin-bottom:-2px;">    
-      <li><a href="Home">HOME</a></li>
+      <!-- <li><a href="Home">HOME</a></li> -->
        <sec:authorize access="!isAuthenticated()">
       <li><a href="Register">REGISTER</a></li>
       <li><a href="Login">LOGIN</a></li>
@@ -73,6 +73,9 @@ width:100%;
   <div style="text-align:center;padding-top:40px;padding-bottom:40px">
   <h1> Thank You!!</h1>
   <h3>your payment has been received <span class="glyphicon glyphicon-ok"></span></h3>
+  <div class="item">
+        <img src="F:\ShoppingKart\src\main\webapp\resources\images\download.png" alt="thanks" width="460" height="345">
+      </div>
   </div>
    
 </body>

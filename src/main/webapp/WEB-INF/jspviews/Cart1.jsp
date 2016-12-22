@@ -63,7 +63,7 @@ body {
       <li><a href="Login">LOGIN</a></li> -->
       </sec:authorize>
 	 <!--  <li><a href="ABOUTUS">ABOUT US</a></li> -->
-	  <li><a href="Contact">CONTACT US</a></li> 
+	  
    <sec:authorize access="isAuthenticated()">
    <ul class="nav navbar-nav navbar-right" style="margin-bottom:0px;">
    <li ><a href="Cart1" ><p>CART <span class="glyphicon glyphicon-shopping-cart"></span></p></a></li>
