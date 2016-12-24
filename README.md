@@ -25,7 +25,7 @@ This Ecommerce project is built using Spring, Hibernate ORM and Spring security 
  - After importing right click on project and click run on apache tomcat server
 #Softwares used
 
--  **Eclipse Neon1A** Eclipse is an integrated development environment (IDE) used in computer programming, and is the most widely used Java IDE.It contains a base workspace and an extensible plug-in system for customizing the environment. Eclipse is written mostly in Java and its primary use is for developing Java applications. [Click here to download Eclipse Marse 2](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-win32-x86_64.zip)
+-  **Eclipse Marse2** Eclipse is an integrated development environment (IDE) used in computer programming, and is the most widely used Java IDE.It contains a base workspace and an extensible plug-in system for customizing the environment. Eclipse is written mostly in Java and its primary use is for developing Java applications. [Click here to download Eclipse Marse 2](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-win32-x86_64.zip)
 
 - **H2 Database v1.3.176** H2 is a relational database management system written in Java. It can be embedded in Java applications or run in the client-server mode. [Click here to download H2 Database](http://www.h2database.com/h2-2014-04-05.zip)
 
